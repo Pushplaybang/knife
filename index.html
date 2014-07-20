@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Knife by Pushplaybang</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Knife</h1>
+        <h2>Nail vertical rhythm, modular scale, and REMs like a boss with this simple set of SASS/SCSS variables, functions and mixins.  </h2>
+        <a href="https://github.com/Pushplaybang/knife" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="knife" class="anchor" href="#knife"><span class="octicon octicon-link"></span></a>knife</h1>
+
+<p>Nail vertical rhythm, modular scale, and REMs like a boss with this simple set of SASS/SCSS variables, functions and mixins.  </p>
+
+<p><strong>NB: early release, will finish testing the first version of this in the next day or so.</strong></p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Simple to master and Use</li>
+<li>Responsive friendly </li>
+<li>Based on REM's including Conveniennt REM functions / Mixins</li>
+<li>Optional <strong>IE Support</strong>
+</li>
+<li>Designed to be compatible with <a href="http://www.gridlover.net/">Grid Lover</a>
+</li>
+<li>Solves sub pixel rounding errors in different browsers by rounding out your base nubers.</li>
+</ul><h3>
+<a name="project-goals" class="anchor" href="#project-goals"><span class="octicon octicon-link"></span></a>Project Goals</h3>
+
+<ul>
+<li>Make good typography EASY(er) to achieve</li>
+<li>Keep 'Knife' simple to use and understand</li>
+<li>Create a typographic equivelant to the awesome Susy</li>
+</ul><h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p>Of course, first make sure you have <a href="http://sass-lang.com/">SASS</a> installed.</p>
+
+<p>Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet to import it.</p>
+
+<div class="highlight highlight-scss"><pre><span class="k">@import</span> <span class="s1">'</span><span class="s2">knife'</span><span class="p">;</span>
+</pre></div>
+
+<p><strong>NB :</strong> Bower Install coming soon.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Note that this tool is heavily inspired by the fantatstic web app <a href="http://www.gridlover.net/">Grid Lover</a> and its absolutely one of the eaiest ways to sort out these initial variables.  </p>
+
+<p>Set your <strong>basic variables</strong></p>
+
+<div class="highlight highlight-scss"><pre><span class="c1">// Basic Type Variabless</span>
+<span class="nv">$body-font-size</span><span class="o">:</span>    <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="nv">$body-line-height</span><span class="o">:</span>  <span class="mi">1</span><span class="mf">.5</span><span class="p">;</span>
+<span class="nv">$scale-factor</span><span class="o">:</span>      <span class="mi">1</span><span class="mf">.333</span><span class="p">;</span>
+<span class="nv">$ie8compatability</span><span class="o">:</span>      <span class="n-Pseudo">true</span><span class="p">;</span>
+</pre></div>
+
+<p>Set Your base font size on the <strong>html ans body</strong></p>
+
+<div class="highlight highlight-scss"><pre><span class="nt">html</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> khtml</span><span class="p">();</span> <span class="p">}</span>
+<span class="nt">body</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> kbody</span><span class="p">();</span> <span class="p">}</span>
+</pre></div>
+
+<p>This can be done in your base or normalization files, or later on before you define youe type.  You should be defining your typography straight after your normalize / reset.</p>
+
+<p>Set up your Typography</p>
+
+<div class="highlight highlight-scss"><pre><span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="o">,</span><span class="nt">h3</span><span class="o">,</span><span class="nt">h4</span><span class="o">,</span><span class="nt">h5</span><span class="o">,</span><span class="nt">h6</span> <span class="p">{</span><span class="na">text-transform</span><span class="o">:</span> <span class="no">uppercase</span><span class="p">;}</span>
+<span class="nt">h1</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> ktype</span><span class="p">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+<span class="nt">h2</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> ktype</span><span class="p">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+<span class="nt">h3</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> ktype</span><span class="p">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+<span class="nt">h4</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> ktype</span><span class="p">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+<span class="nt">h5</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> ktype</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span> <span class="p">}</span>
+<span class="nt">h6</span> <span class="p">{</span> 
+<span class="k">@include</span><span class="nd"> ktype</span><span class="p">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="na">font-weight</span><span class="o">:</span> <span class="no">normal</span><span class="p">;</span>
+    <span class="na">text-transform</span><span class="o">:</span> <span class="no">capitalize</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">p</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">ol</span> <span class="p">{</span><span class="k">@include</span><span class="nd"> ktype</span><span class="p">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="p">);}</span>
+<span class="nt">small</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> ktype</span><span class="p">(</span><span class="mi">-1</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+</pre></div>
+
+<p>Use the <code>krem()</code> mixin to set <strong>any</strong> other value in rems, because no one really spends their life thinking in relative units of measure.</p>
+
+<div class="highlight highlight-scss"><pre><span class="k">@include</span><span class="nd"> krem</span><span class="p">(</span><span class="s2">"height"</span><span class="o">,</span> <span class="mi">160</span><span class="kt">px</span><span class="p">);</span>
+</pre></div>
+
+<h3>
+<a name="output-" class="anchor" href="#output-"><span class="octicon octicon-link"></span></a>Output :</h3>
+
+<p>note the bloat added by the IE compatability, obviously setting that to false will result in halving the output.  Have a look at the basic demo in the example folder for more information.</p>
+
+<div class="highlight highlight-css"><pre><span class="c">/* Type Setup */</span>
+<span class="nt">html</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* Typography */</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
+  <span class="k">text-transform</span><span class="o">:</span> <span class="k">uppercase</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">68px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">4</span><span class="o">.</span><span class="m">25</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">72px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">4</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">48px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">3</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">h2</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">51px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">3</span><span class="o">.</span><span class="m">1875</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">72px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">4</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">h3</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">38px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">2</span><span class="o">.</span><span class="m">375</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">48px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">3</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">h4</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">29px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">8125</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">48px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">3</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">h5</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">22px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">375</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">0</span><span class="n">rem</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">h6</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">0</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">text-transform</span><span class="o">:</span> <span class="k">capitalize</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">p</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">dl</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">0</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">small</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">13px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">8125</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">0</span><span class="n">rem</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">0</span><span class="n">rem</span><span class="p">;</span> <span class="p">}</span>
+
+</pre></div>
+
+<h1>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h1>
+
+<p>Coming Soon.</p>
+
+<h3>
+<a name="acknowledgements--inspiration" class="anchor" href="#acknowledgements--inspiration"><span class="octicon octicon-link"></span></a>Acknowledgements &amp; Inspiration</h3>
+
+<p>heavily inspired by the awesome web app <a href="http://www.gridlover.net/">Grid Lover</a> and <a href="https://github.com/sevenupcan/gridlover-mixin">sevenupcan's sass gridlover mixin</a>. I've been further pushed to develop this little SASS tool to help "onboard" team members with typographic layout principals, using REM units, speeding up starting dev time on projects and make something without a steep learning curve.  <strong>I hope you find it useful too</strong>.</p>
+
+<h4>
+<a name="about-web-typography" class="anchor" href="#about-web-typography"><span class="octicon octicon-link"></span></a>About Web Typography</h4>
+
+<ul>
+<li><a href="http://alistapart.com/article/more-meaningful-typography">More Meaningful Typography</a></li>
+<li><a href="http://alistapart.com/article/settingtypeontheweb">Setting Typeon the Web to Baseline Grid</a></li>
+<li><a href="http://24ways.org/2011/composing-the-new-canon/">Composing the New Canon: Music, Harmony, Proportion</a></li>
+<li><a href="http://blog.8thlight.com/billy-whited/2011/10/28/r-a-ela-tional-design.html#tips">Relational Design</a></li>
+</ul><h4>
+<a name="tools-for-better-type" class="anchor" href="#tools-for-better-type"><span class="octicon octicon-link"></span></a>Tools for Better Type</h4>
+
+<ul>
+<li><a href="http://www.gridlover.net/">Grid Lover</a></li>
+<li><a href="http://modularscale.com/">Modular Scale</a></li>
+</ul><h2>
+<a name="todo-" class="anchor" href="#todo-"><span class="octicon octicon-link"></span></a>TODO :</h2>
+
+<ul>
+<li>Finish resolve mixin</li>
+<li>add space and padd mixins</li>
+<li><del>Add sache</del></li>
+<li>Add bower</li>
+<li>finish push, pull, suffix and prefix</li>
+<li>add 'offset' to accomodate border etc. </li>
+<li>handle unitless values</li>
+<li>handle multiple values for padding / margin etc</li>
+<li>Create awesome examples</li>
+<li>Finish Wiki</li>
+<li>Make Awesome Landing Page</li>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="https://github.com/Pushplaybang/knife/blob/master/LICENSE">MIT Licensed</a> , Paul van Zyl 2014</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Pushplaybang/knife/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Pushplaybang/knife/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Pushplaybang/knife"></a> is maintained by <a href="https://github.com/Pushplaybang">Pushplaybang</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33756260-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
