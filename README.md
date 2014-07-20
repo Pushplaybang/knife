@@ -1,8 +1,8 @@
 knife
 =====
-Nail vertical rythm, modular scale, and REMs like a boss with this simple set of SASS/SCSS variables, functions and mixins.  
+Nail vertical rhythm, modular scale, and REMs like a boss with this simple set of SASS/SCSS variables, functions and mixins.  
 
-**NB: in beta, will finish testing the first version of this in the next day or so.**
+**NB: early release, will finish testing the first version of this in the next day or so.**
 
 ## Features
 * Simple to master and Use
@@ -24,8 +24,9 @@ Nail vertical rythm, modular scale, and REMs like a boss with this simple set of
 Of course, first make sure you have [SASS](http://sass-lang.com/) installed.
 
 Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet to import it.
-
-		@import 'knife';
+```scss
+@import 'knife';
+```
 
 **NB :** Bower Install coming soon.
 
@@ -35,40 +36,151 @@ Note that this tool is heavily inspired by the fantatstic web app [Grid Lover](h
 
 Set your **basic variables**
 
-		// Basic Type Variabless
-		$body-font-size: 	16px;
-		$body-line-height: 	1.5;
-		$scale-factor: 		1.333;
-		$ie8compatability:  true;
-
+```scss
+// Basic Type Variabless
+$body-font-size: 	16px;
+$body-line-height: 	1.5;
+$scale-factor: 		1.333;
+$ie8compatability:  	true;
+```
 
 
 Set Your base font size on the **html ans body**
 
-		html { @include khtml(); }
-		body { @include kbody(); }
+```scss
+html { @include khtml(); }
+body { @include kbody(); }
+```
 
 This can be done in your base or normalization files, or later on before you define youe type.  You should be defining your typography straight after your normalize / reset.
 
 Set up your Typography
 
-		h1,h2,h3,h4,h5,h6 {text-transform: uppercase;}
-		h1 { @include ktype(5, 1, 1); }
-		h2 { @include ktype(4, 1, 1); }
-		h3 { @include ktype(3, 1, 1); }
-		h4 { @include ktype(2, 1, 1); }
-		h5 { @include ktype(1, 1, 0); }
-		h6 { 
-			@include ktype(0, 1, 0);
-			font-weight: normal;
-			text-transform: capitalize;
-		}
-		p, ul, ol {@include ktype(0,0,1);}
-		small { @include ktype(-1,0,1); }
+```scss
+h1,h2,h3,h4,h5,h6 {text-transform: uppercase;}
+h1 { @include ktype(5, 1, 1); }
+h2 { @include ktype(4, 1, 1); }
+h3 { @include ktype(3, 1, 1); }
+h4 { @include ktype(2, 1, 1); }
+h5 { @include ktype(1, 1, 0); }
+h6 { 
+@include ktype(0, 1, 0);
+	font-weight: normal;
+	text-transform: capitalize;
+}
+p, ul, ol {@include ktype(0,0,1);}
+small { @include ktype(-1,0,1); }
+```
 
 Use the `krem()` mixin to set **any** other value in rems, because no one really spends their life thinking in relative units of measure.
 
-		@include krem("height", 160px);
+```scss
+@include krem("height", 160px);
+```
+### Output :
+
+note the bloat added by the IE compatability, obviously setting that to false will result in halving the output.  Have a look at the basic demo in the example folder for more information.
+
+```css
+/* Type Setup */
+html {
+  font-size: 16px;
+  line-height: 24px; }
+
+body {
+  font-size: 16px;
+  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem; }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase; }
+
+h1 {
+  font-size: 68px;
+  font-size: 4.25rem;
+  line-height: 72px;
+  line-height: 4.5rem;
+  margin-top: 48px;
+  margin-top: 3rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+h2 {
+  font-size: 51px;
+  font-size: 3.1875rem;
+  line-height: 72px;
+  line-height: 4.5rem;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+h3 {
+  font-size: 38px;
+  font-size: 2.375rem;
+  line-height: 48px;
+  line-height: 3rem;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+h4 {
+  font-size: 29px;
+  font-size: 1.8125rem;
+  line-height: 48px;
+  line-height: 3rem;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+h5 {
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem; }
+
+h6 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
+  text-transform: capitalize; }
+
+p, ul, ol, dl {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+small {
+  display: inline-block;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem; }
+
+```
+
 
 # About
 
@@ -94,7 +206,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 ## TODO : 
 * Finish resolve mixin
 * add space and padd mixins
-* Add sache
+* ~~Add sache~~
 * Add bower
 * finish push, pull, suffix and prefix
 * add 'offset' to accomodate border etc. 
