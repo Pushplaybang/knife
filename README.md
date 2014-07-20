@@ -213,7 +213,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * ~~add reduce to kbody~~
 * ~~add reduce to khtnl~~
 * ~~Add sache~~
-* Add bower support
+* ~~Add bower support~~
 * ~~finish push, pull~~ 
 * ~~suffix and prefix~~
 * ~~add 'offset' to accomodate border etc. ~~
