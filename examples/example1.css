@@ -456,8 +456,8 @@ small {
   line-height: 1.5rem;
   margin-top: 0px;
   margin-top: 0rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 0px;
+  margin-bottom: 0rem; }
 
 .container, .container footer {
   *zoom: 1; }
