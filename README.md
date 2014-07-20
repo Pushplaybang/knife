@@ -22,12 +22,18 @@ Nail vertical rhythm, modular scale, and REMs like a boss with this simple set o
 
 Of course, first make sure you have [SASS](http://sass-lang.com/) installed.
 
-Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet to import it.
+then install with bower : 
+
+```bash
+$ bower install knife
+```
+
+or : Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet to import it.
 ```scss
 @import 'knife';
 ```
 
-**NB :** Bower Install coming soon.
+
 
 
 ## Usage
