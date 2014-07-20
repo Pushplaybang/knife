@@ -33,7 +33,7 @@ Download and simply include the knife.sass file in your sass directory and place
 ## Usage
 Note that this tool is heavily inspired by the fantatstic web tool [Grid Lover](http://www.gridlover.net/) and its absolutely one of the eaiest ways to sort out these initial variables.  
 
-1. Set your **basic variables**
+Set your **basic variables**
 
 		// Basic Type Variabless
 		$body-font-size: 	16px;
@@ -43,19 +43,14 @@ Note that this tool is heavily inspired by the fantatstic web tool [Grid Lover](
 
 
 
-2. Set Your base font size on the **html ans body**
+Set Your base font size on the **html ans body**
 
-		html {
-			@include khtml();
-		}
-		
-		body {
-			@include kbody();
-		}
+		html { @include khtml(); }
+		body { @include kbody(); }
 
 This can be done in your base or normalization files, or later on before you define youe type.  You should be defining your typography straight after your normalize / reset.
 
-3. Set up your Typography
+Set up your Typography
 
 		h1,h2,h3,h4,h5,h6 {text-transform: uppercase;}
 		h1 { @include ktype(5, 1, 1); }
@@ -71,7 +66,7 @@ This can be done in your base or normalization files, or later on before you def
 		p, ul, ol {@include ktype(0,0,1);}
 		small { @include ktype(-1,0,1); }
 
-4. Use the `krem()` mixin to set **any** other value in rems, because no one really spends their life thinking in relative units of measure.
+Use the `krem()` mixin to set **any** other value in rems, because no one really spends their life thinking in relative units of measure.
 
 		@include krem("height", 160px);
 
@@ -79,7 +74,7 @@ This can be done in your base or normalization files, or later on before you def
 
 Coming Soon.
 
-### Inspiration
+### Acknowledgements & Inspiration
 heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) and [sevenupcan's sass gridlover mixin](https://github.com/sevenupcan/gridlover-mixin). I've been further pushed to develop this little SASS tool to help "onboard" team members with typographic layout principals, using REM units, speeding up starting dev time on projects and make something without a steep learning curve.  **I hope you find it useful too**.
 
 
@@ -102,6 +97,9 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * Add sache
 * Add bower
 * finish push, pull, suffix and prefix
+* add 'offset' to accomodate border etc. 
+* handle unitless values
+* handle multiple values for padding / margin etc
 * Create awesome examples
 * Finish Wiki
 * Make Awesome Landing Page

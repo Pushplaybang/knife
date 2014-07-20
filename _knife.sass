@@ -30,11 +30,11 @@ $body-line-height: 	$golden !default
 $scale-factor: 		$minor-third !default
 
 // Set a consistent base size to calculate from, rounding the values solves subpixel remdering problems.
-$baseround : 	round($body-font-size * $body-line-height)
-$baseup : 		ceil($body-font-size * $body-line-height)
-$basedown : 	floor($body-font-size * $body-line-height)
+// $baseround : 	round($body-font-size * $body-line-height)
+// $baseup : 		ceil($body-font-size * $body-line-height)
+// $basedown : 	floor($body-font-size * $body-line-height)
 
-$kbase : 		$baseup !default
+// $kbase : 		ceil($body-font-size * $body-line-height)
 
 // Settings
 $ie8compatability: 	true !default
@@ -106,33 +106,36 @@ $outputrems: 		true !default
 	#{$attr} : calculateRem($px)
 
 @mixin khtml()
+	$kbase : 		ceil($body-font-size * $body-line-height)
 	@include pxType($body-font-size, $kbase)
 
 @mixin kbody()
+	$kbase : 		ceil($body-font-size * $body-line-height)
 	@if $ie8compatability == true
 		@include pxType($body-font-size, $kbase)
 	@include remType($body-font-size, $kbase)
 
 // type mixin
-@mixin ktype($scale, $before: 0, $after: 0, $pull: false, $base: $kbase, $ie: $ie8compatability, $rem: $outputrems )
+@mixin ktype($scale, $before: 0, $after: 0, $pull: false, $ie: $ie8compatability)
 	
 	// setup what we've got to work with
+	$kbase : 		ceil($body-font-size * $body-line-height)
 	$new-font-size: 	$body-font-size
-	$new-line-height: 	$base
-	$margin-before: 	$base * $before
-	$margin-after: 		$base * $after 
+	$new-line-height: 	$kbase
+	$margin-before: 	$kbase * $before
+	$margin-after: 		$kbase * $after 
 	$compat: 			$ie
 
 	// Set new vars
 	@if $scale != 0
 		$new-font-size: 	ceil($body-font-size * exponent($scale-factor, $scale))
-		$new-line-height: 	ceil($new-font-size / $base) * $base
+		$new-line-height: 	ceil($new-font-size / $kbase) * $kbase
 
 		// tighten line height with pull - TODO : do this better
 		@if $pull == 1
-			$new-line-height: $new-line-height - ($base / 2)
+			$new-line-height: $new-line-height - ($kbase / 2)
 		@else if $pull == 2
-			$new-line-height: $new-line-height - $base
+			$new-line-height: $new-line-height - $kbase
 	
 	// Output
 	@include krem("font-size", $new-font-size, $compat)
