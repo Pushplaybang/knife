@@ -7,7 +7,7 @@ Nail vertical rhythm, modular scale, and REMs like a boss with this simple set o
 ## Features
 * Simple to master and Use
 * Responsive friendly 
-* Based on REM's including Conveniennt REM functions / Mixins
+* Work / think in px - **win in REMs**
 * Optional **IE Support**
 * Designed to be compatible with [Grid Lover](http://www.gridlover.net/)
 * Solves sub pixel rounding errors in different browsers by rounding out your base nubers.
@@ -16,7 +16,6 @@ Nail vertical rhythm, modular scale, and REMs like a boss with this simple set o
 * Make good typography EASY(er) to achieve
 * Keep 'Knife' simple to use and understand
 * Create a typographic equivelant to the awesome Susy
-
 
 
 ## Install
@@ -41,7 +40,7 @@ Set your **basic variables**
 $body-font-size: 	16px;
 $body-line-height: 	1.5;
 $scale-factor: 		1.333;
-$ie8compatability:  	true;
+$ie8compatability:  true;
 ```
 
 
@@ -204,17 +203,23 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * [Modular Scale](http://modularscale.com/)
 
 ## TODO : 
-* Finish resolve mixin
-* add space and padd mixins
+* ~~Finish resolve mixin~~
+* ~~add reduce to kbody~~
+* ~~add reduce to khtnl~~
 * ~~Add sache~~
-* Add bower
-* finish push, pull, suffix and prefix
-* add 'offset' to accomodate border etc. 
+* Add bower support
+* ~~finish push, pull~~ 
+* ~~suffix and prefix~~
+* ~~add 'offset' to accomodate border etc. ~~
 * handle unitless values
 * handle multiple values for padding / margin etc
+* Test, Test and test again.
+* ~~Add basic Example~~
 * Create awesome examples
 * Finish Wiki
-* Make Awesome Landing Page
+* ~~add basic github page~~
+* Finish killer logo
+* Make sick as f@!% Landing Page
 
 ## License
 [MIT Licensed](https://github.com/Pushplaybang/knife/blob/master/LICENSE) , Paul van Zyl 2014

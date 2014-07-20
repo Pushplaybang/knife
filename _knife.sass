@@ -24,19 +24,10 @@ $major-eleventh:   2.667
 $major-twelfth:    3
 $double-octave:    4
 
-// Basic Type Variabless
+// Settings
 $body-font-size: 	14px !default
 $body-line-height: 	$golden !default
 $scale-factor: 		$minor-third !default
-
-// Set a consistent base size to calculate from, rounding the values solves subpixel remdering problems.
-// $baseround : 	round($body-font-size * $body-line-height)
-// $baseup : 		ceil($body-font-size * $body-line-height)
-// $basedown : 	floor($body-font-size * $body-line-height)
-
-// $kbase : 		ceil($body-font-size * $body-line-height)
-
-// Settings
 $ie8compatability: 	true !default
 $outputrems: 		true !default
 
@@ -67,10 +58,16 @@ $outputrems: 		true !default
 	@return #{$remSize}rem
 
 // resolve values to a multiple of our base
-@function resolve($value: 0,$round: "up", $base: $baseround)
-	$newVal: $value % $base
-	
-	$r: $value - $newVal // TODO : add round up or round down function
+@function resolve($value: 0, $roundup: false)
+	$kbase : 		ceil($body-font-size * $body-line-height)
+	$newVal: $value % $kbase
+	$r : 0
+
+	@if $roundup == false
+		$r: $value - $newVal
+	@else if $roundup == true
+		$x : $kbase - $newVal
+		$r : $value + $x
 	@return $r
 
 
@@ -100,23 +97,34 @@ $outputrems: 		true !default
 	margin-bottom: calculateRem($ma)
 
 // output any attr as rem with IE support
-@mixin krem($attr: "",$px: 0, $ie: $ie8compatability)
-	@if $ie == true
-		#{$attr} : $px
-	#{$attr} : calculateRem($px)
+@mixin krem($attr: "",$px: 0, $ie: $ie8compatability, $resolve: false, $roundup: false)
+	@if $resolve == false
+		@if $ie == true
+			#{$attr} : $px
+		#{$attr} : calculateRem($px)
+	@else if $resolve == true
+		$newVal : resolve($px,$roundup)
+		@if $ie == true
+			#{$attr} : $newVal
+		#{$attr} : calculateRem($newVal)
 
-@mixin khtml()
-	$kbase : 		ceil($body-font-size * $body-line-height)
-	@include pxType($body-font-size, $kbase)
+// html mixin
+@mixin khtml($reduce:0px)
+	$kbase : 		(ceil($body-font-size * $body-line-height)) - $reduce
+	$px : 			$body-font-size - $reduce
+	@include pxType($px, $kbase)
 
-@mixin kbody()
-	$kbase : 		ceil($body-font-size * $body-line-height)
+// body mixin
+@mixin kbody($reduce:0px)
+	$kbase : 		(ceil($body-font-size * $body-line-height)) - $reduce
+	$px : 			$body-font-size - $reduce
+
 	@if $ie8compatability == true
-		@include pxType($body-font-size, $kbase)
-	@include remType($body-font-size, $kbase)
+		@include pxType($px, $kbase)
+	@include remType($px, $kbase)
 
 // type mixin
-@mixin ktype($scale, $before: 0, $after: 0, $pull: false, $ie: $ie8compatability)
+@mixin ktype($scale, $before: 0, $after: 0,$offset: 0, $pull: false, $push: false, $ie: $ie8compatability)
 	
 	// setup what we've got to work with
 	$kbase : 		ceil($body-font-size * $body-line-height)
@@ -131,11 +139,17 @@ $outputrems: 		true !default
 		$new-font-size: 	ceil($body-font-size * exponent($scale-factor, $scale))
 		$new-line-height: 	ceil($new-font-size / $kbase) * $kbase
 
-		// tighten line height with pull - TODO : do this better
-		@if $pull == 1
-			$new-line-height: $new-line-height - ($kbase / 2)
-		@else if $pull == 2
-			$new-line-height: $new-line-height - $kbase
+		// push and pull 
+		@if $pull != false
+			$m: ($pull / 2)
+			$new-line-height: $new-line-height - ($new-line-height*$m)
+		@else if $push != false
+			$m: ($push / 2)
+			$new-line-height: $new-line-height + ($new-line-height*$m)
+	
+	// offset
+	@if $offset != 0
+		$new-line-height: $new-line-height - $offset
 	
 	// Output
 	@include krem("font-size", $new-font-size, $compat)
@@ -144,4 +158,19 @@ $outputrems: 		true !default
 	@include krem("margin-bottom", $margin-after, $compat)
 	
 
+// prefix : add padding before
+@mixin kprefix($multiple, $margin:false)
+	$x : 		(ceil($body-font-size * $body-line-height)) * $multiplie
+	@if $margin == false 
+		@include krem("padding-top",$x)
+	@else 
+		@include krem("margin-top",$x)
+
+// suffix : add padding after
+@mixin ksuffix($multiple, $margin:false)
+	$x : 		(ceil($body-font-size * $body-line-height)) * $multiplie
+	@if $margin == false 
+		@include krem("padding-bottom",$x)
+	@else 
+		@include krem("margin-bottom",$x)
 

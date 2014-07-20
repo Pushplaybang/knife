@@ -1,4 +1,6 @@
 /config.codekit
+.sass-cache
+/examples/.sass-cache
 
 ### OSX ###
 .DS_Store
@@ -39,3 +41,4 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
