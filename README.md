@@ -21,9 +21,9 @@ Nail vertical rythm, modular scale, and REMs like a boss with this simple set of
 
 ## Install
 
-Of course, first make sure you have [SASS](http://sass-lang.com/) instaled.
+Of course, first make sure you have [SASS](http://sass-lang.com/) installed.
 
-Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet.
+Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet to import it.
 
 		@import 'knife';
 
@@ -31,7 +31,7 @@ Download and simply include the knife.sass file in your sass directory and place
 
 
 ## Usage
-Note that this tool is heavily inspired by the fantatstic web tool [Grid Lover](http://www.gridlover.net/) and its absolutely one of the eaiest ways to sort out these initial variables.  
+Note that this tool is heavily inspired by the fantatstic web app [Grid Lover](http://www.gridlover.net/) and its absolutely one of the eaiest ways to sort out these initial variables.  
 
 Set your **basic variables**
 
