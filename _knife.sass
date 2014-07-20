@@ -1,0 +1,144 @@
+
+
+
+/* Vars */
+
+
+
+// Modular Scale ratios
+$golden:           1.618
+$minor-second:     1.067
+$major-second:     1.125
+$minor-third:      1.2
+$major-third:      1.25
+$perfect-fourth:   1.333
+$augmented-fourth: 1.414
+$perfect-fifth:    1.5
+$minor-sixth:      1.6
+$major-sixth:      1.667
+$minor-seventh:    1.778
+$major-seventh:    1.875
+$octave:           2
+$major-tenth:      2.5
+$major-eleventh:   2.667
+$major-twelfth:    3
+$double-octave:    4
+
+// Basic Type Variabless
+$body-font-size: 	14px !default
+$body-line-height: 	$golden !default
+$scale-factor: 		$minor-third !default
+
+// Set a consistent base size to calculate from, rounding the values solves subpixel remdering problems.
+$baseround : 	round($body-font-size * $body-line-height)
+$baseup : 		ceil($body-font-size * $body-line-height)
+$basedown : 	floor($body-font-size * $body-line-height)
+
+$kbase : 		$baseup !default
+
+// Settings
+$ie8compatability: 	true !default
+$outputrems: 		true !default
+
+
+
+/* Utilities */
+
+
+
+// Sass exponent support
+@function exponent($base, $exponent)
+	// reset value
+	$value: $base
+	// positive intergers get multiplied
+	@if $exponent > 1
+		@for $i from 2 through $exponent
+			$value : $value * $base
+	// negitive intergers get divided. A number divided by itself is 1
+	@if $exponent < 1
+		@for $i from 0 through -$exponent
+			$value : $value / $base
+	// return the last value written
+	@return ($value)
+
+// px to rem
+@function calculateRem($size) 
+	$remSize: $size / $body-font-size
+	@return #{$remSize}rem
+
+// resolve values to a multiple of our base
+@function resolve($value: 0,$round: "up", $base: $baseround)
+	$newVal: $value % $base
+	
+	$r: $value - $newVal // TODO : add round up or round down function
+	@return $r
+
+
+
+/* Mixins */
+
+
+
+// rem font and line height
+@mixin pxType($fontSize, $lineHeight)
+	font-size: $fontSize
+	line-height: $lineHeight
+
+// rem font and line height
+@mixin remType($fontSize, $lineHeight)
+	font-size: calculateRem($fontSize)
+	line-height: calculateRem($lineHeight)
+
+// margin top and bottom in px
+@mixin pxMargin($mb: 0,$ma: 0)
+	margin-top: $mb
+	margin-bottom: $ma
+
+// margin top and bottom in rem
+@mixin remMargin($mb: 0,$ma: 0)
+	margin-top: calculateRem($mb)
+	margin-bottom: calculateRem($ma)
+
+// output any attr as rem with IE support
+@mixin krem($attr: "",$px: 0, $ie: $ie8compatability)
+	@if $ie == true
+		#{$attr} : $px
+	#{$attr} : calculateRem($px)
+
+@mixin khtml()
+	@include pxType($body-font-size, $kbase)
+
+@mixin kbody()
+	@if $ie8compatability == true
+		@include pxType($body-font-size, $kbase)
+	@include remType($body-font-size, $kbase)
+
+// type mixin
+@mixin ktype($scale, $before: 0, $after: 0, $pull: false, $base: $kbase, $ie: $ie8compatability, $rem: $outputrems )
+	
+	// setup what we've got to work with
+	$new-font-size: 	$body-font-size
+	$new-line-height: 	$base
+	$margin-before: 	$base * $before
+	$margin-after: 		$base * $after 
+	$compat: 			$ie
+
+	// Set new vars
+	@if $scale != 0
+		$new-font-size: 	ceil($body-font-size * exponent($scale-factor, $scale))
+		$new-line-height: 	ceil($new-font-size / $base) * $base
+
+		// tighten line height with pull - TODO : do this better
+		@if $pull == 1
+			$new-line-height: $new-line-height - ($base / 2)
+		@else if $pull == 2
+			$new-line-height: $new-line-height - $base
+	
+	// Output
+	@include krem("font-size", $new-font-size, $compat)
+	@include krem("line-height", $new-line-height, $compat)
+	@include krem("margin-top", $margin-before, $compat)
+	@include krem("margin-bottom", $margin-after, $compat)
+	
+
+
