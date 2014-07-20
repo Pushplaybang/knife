@@ -41,7 +41,8 @@
 <ul>
 <li>Simple to master and Use</li>
 <li>Responsive friendly </li>
-<li>Based on REM's including Conveniennt REM functions / Mixins</li>
+<li>Work / think in px - <strong>win in REMs</strong>
+</li>
 <li>Optional <strong>IE Support</strong>
 </li>
 <li>Designed to be compatible with <a href="http://www.gridlover.net/">Grid Lover</a>
@@ -59,12 +60,15 @@
 
 <p>Of course, first make sure you have <a href="http://sass-lang.com/">SASS</a> installed.</p>
 
-<p>Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet to import it.</p>
+<p>then install with bower : </p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>bower install knife
+</pre></div>
+
+<p>or : Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet to import it.</p>
 
 <div class="highlight highlight-scss"><pre><span class="k">@import</span> <span class="s1">'</span><span class="s2">knife'</span><span class="p">;</span>
 </pre></div>
-
-<p><strong>NB :</strong> Bower Install coming soon.</p>
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
@@ -77,7 +81,7 @@
 <span class="nv">$body-font-size</span><span class="o">:</span>    <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
 <span class="nv">$body-line-height</span><span class="o">:</span>  <span class="mi">1</span><span class="mf">.5</span><span class="p">;</span>
 <span class="nv">$scale-factor</span><span class="o">:</span>      <span class="mi">1</span><span class="mf">.333</span><span class="p">;</span>
-<span class="nv">$ie8compatability</span><span class="o">:</span>      <span class="n-Pseudo">true</span><span class="p">;</span>
+<span class="nv">$ie8compatability</span><span class="o">:</span>  <span class="n-Pseudo">true</span><span class="p">;</span>
 </pre></div>
 
 <p>Set Your base font size on the <strong>html ans body</strong></p>
@@ -242,17 +246,24 @@
 <a name="todo-" class="anchor" href="#todo-"><span class="octicon octicon-link"></span></a>TODO :</h2>
 
 <ul>
-<li>Finish resolve mixin</li>
-<li>add space and padd mixins</li>
+<li><del>Finish resolve mixin</del></li>
+<li><del>add reduce to kbody</del></li>
+<li><del>add reduce to khtnl</del></li>
 <li><del>Add sache</del></li>
-<li>Add bower</li>
-<li>finish push, pull, suffix and prefix</li>
-<li>add 'offset' to accomodate border etc. </li>
+<li>Add bower support</li>
+<li>
+<del>finish push, pull</del> </li>
+<li><del>suffix and prefix</del></li>
+<li>~~add 'offset' to accomodate border etc. ~~</li>
 <li>handle unitless values</li>
 <li>handle multiple values for padding / margin etc</li>
+<li>Test, Test and test again.</li>
+<li><del>Add basic Example</del></li>
 <li>Create awesome examples</li>
 <li>Finish Wiki</li>
-<li>Make Awesome Landing Page</li>
+<li><del>add basic github page</del></li>
+<li>Finish killer logo</li>
+<li>Make sick as f@!% Landing Page</li>
 </ul><h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
