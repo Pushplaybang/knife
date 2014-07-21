@@ -201,6 +201,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * [Setting Typeon the Web to Baseline Grid](http://alistapart.com/article/settingtypeontheweb)
 * [Composing the New Canon: Music, Harmony, Proportion](http://24ways.org/2011/composing-the-new-canon/)
 * [Relational Design](http://blog.8thlight.com/billy-whited/2011/10/28/r-a-ela-tional-design.html#tips)
+* [Aligning type to baseline the right way using SASS](https://medium.com/@razvanonofrei/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b)
 
 
 #### Tools for Better Type
