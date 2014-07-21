@@ -216,7 +216,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * ~~Add bower support~~
 * ~~finish push, pull~~ 
 * ~~suffix and prefix~~
-* ~~add 'offset' to accomodate border etc. ~~
+* ~~add 'offset' to accomodate border etc.~~
 * handle unitless values
 * handle multiple values for padding / margin etc
 * Test, Test and test again.
