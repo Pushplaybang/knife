@@ -210,6 +210,14 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * [Modular Scale](http://modularscale.com/)
 
 ## TODO : 
+* finish type template mixin
+* handle unitless values
+* handle multiple values for padding / margin etc
+* Test, Test and test again.
+* Finish Wiki
+* Create awesome examples
+* Finish killer logo
+* Make sick as f@!% Landing Page
 * ~~Finish resolve mixin~~
 * ~~add reduce to kbody~~
 * ~~add reduce to khtnl~~
@@ -217,16 +225,10 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * ~~Add bower support~~
 * ~~finish push, pull~~ 
 * ~~suffix and prefix~~
+* ~~start type template mixin~~
 * ~~add 'offset' to accomodate border etc.~~
-* handle unitless values
-* handle multiple values for padding / margin etc
-* Test, Test and test again.
 * ~~Add basic Example~~
-* Create awesome examples
-* Finish Wiki
 * ~~add basic github page~~
-* Finish killer logo
-* Make sick as f@!% Landing Page
 
 ## License
 [MIT Licensed](https://github.com/Pushplaybang/knife/blob/master/LICENSE) , Paul van Zyl 2014

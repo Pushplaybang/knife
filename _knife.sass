@@ -174,3 +174,23 @@ $outputrems: 		true !default
 	@else 
 		@include krem("margin-bottom",$x)
 
+
+@mixin kniferack()
+	/* Typography */
+	h1 
+		@include ktype(5, 2, 1)
+	h2 
+		@include ktype(4, 1, 1)
+	h3 
+		@include ktype(3, 1, 1)
+	h4 
+		@include ktype(2, 1, 1)
+	h5 
+		@include ktype(1, 1, 0)
+	h6  
+		@include ktype(0, 1, 0)
+	p, ul, ol,dl 
+		@include ktype(0,0,1)
+	small
+		display: inline-block
+		@include ktype(-1,0,0)
