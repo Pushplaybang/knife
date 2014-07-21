@@ -10,7 +10,7 @@ Nail vertical rhythm, modular scale, and REMs like a boss with this simple set o
 * Work / think in px - **win in REMs**
 * Optional **IE Support**
 * Designed to be compatible with [Grid Lover](http://www.gridlover.net/)
-* Solves sub pixel rounding errors in different browsers by rounding out your base nubers.
+* Solves sub pixel rounding errors in different browsers by rounding out your base numbers.
 
 ### Project Goals
 * Make good typography EASY(er) to achieve
