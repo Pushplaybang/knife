@@ -160,7 +160,7 @@ $outputrems: 		true !default
 
 // prefix : add padding before
 @mixin kprefix($multiple, $margin:false)
-	$x : 		(ceil($body-font-size * $body-line-height)) * $multiplie
+	$x : 		(ceil($body-font-size * $body-line-height)) * $multiple
 	@if $margin == false 
 		@include krem("padding-top",$x)
 	@else 
@@ -168,7 +168,7 @@ $outputrems: 		true !default
 
 // suffix : add padding after
 @mixin ksuffix($multiple, $margin:false)
-	$x : 		(ceil($body-font-size * $body-line-height)) * $multiplie
+	$x : 		(ceil($body-font-size * $body-line-height)) * $multiple
 	@if $margin == false 
 		@include krem("padding-bottom",$x)
 	@else 
