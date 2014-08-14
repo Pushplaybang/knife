@@ -210,6 +210,9 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * [Modular Scale](http://modularscale.com/)
 
 ## TODO : 
+* Implement lists
+* Consider SASS Maps for handling properties  better
+* Handle old global variable warning nonsense
 * finish type template mixin
 * handle unitless values
 * handle multiple values for padding / margin etc
