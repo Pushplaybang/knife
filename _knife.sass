@@ -59,14 +59,14 @@ $outputrems: 		true !default
 
 // resolve values to a multiple of our base
 @function resolve($value: 0, $roundup: false)
-	$kbase : 		ceil($body-font-size * $body-line-height)
-	$newVal: $value % $kbase
+	$kb : ceil($body-font-size * $body-line-height)
+	$newVal: $value % $kb
 	$r : 0
 
 	@if $roundup == false
 		$r: $value - $newVal
 	@else if $roundup == true
-		$x : $kbase - $newVal
+		$x : $kb - $newVal
 		$r : $value + $x
 	@return $r
 
@@ -110,34 +110,34 @@ $outputrems: 		true !default
 
 // html mixin
 @mixin khtml($reduce:0px)
-	$kbase : 		(ceil($body-font-size * $body-line-height)) - $reduce
+	$kb : 		(ceil($body-font-size * $body-line-height)) - $reduce
 	$px : 			$body-font-size - $reduce
-	@include pxType($px, $kbase)
+	@include pxType($px, $kb)
 
 // body mixin
 @mixin kbody($reduce:0px)
-	$kbase : 		(ceil($body-font-size * $body-line-height)) - $reduce
+	$kb : 		(ceil($body-font-size * $body-line-height)) - $reduce
 	$px : 			$body-font-size - $reduce
 
 	@if $ie8compatability == true
-		@include pxType($px, $kbase)
-	@include remType($px, $kbase)
+		@include pxType($px, $kb)
+	@include remType($px, $kb)
 
 // type mixin
 @mixin ktype($scale, $before: 0, $after: 0,$offset: 0, $pull: false, $push: false, $ie: $ie8compatability)
 	
 	// setup what we've got to work with
-	$kbase : 		ceil($body-font-size * $body-line-height)
+	$kb : 		ceil($body-font-size * $body-line-height)
 	$new-font-size: 	$body-font-size
-	$new-line-height: 	$kbase
-	$margin-before: 	$kbase * $before
-	$margin-after: 		$kbase * $after 
+	$new-line-height: 	$kb
+	$margin-before: 	$kb * $before
+	$margin-after: 		$kb * $after 
 	$compat: 			$ie
 
 	// Set new vars
 	@if $scale != 0
 		$new-font-size: 	ceil($body-font-size * exponent($scale-factor, $scale))
-		$new-line-height: 	ceil($new-font-size / $kbase) * $kbase
+		$new-line-height: 	ceil($new-font-size / $kb) * $kb
 
 		// push and pull 
 		@if $pull != false
