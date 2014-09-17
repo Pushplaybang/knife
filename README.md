@@ -2,7 +2,7 @@ knife
 =====
 Nail vertical rhythm, modular scale, and REMs like a boss with this simple set of SASS/SCSS variables, functions and mixins.  
 
-**NB: early release, will finish testing the first version of this in the next day or so.**
+**NB: early release, expect this to change, I'll do my best not to break stuff, and let you know if something will break in the future..**
 
 ## Features
 * Simple to master and Use
