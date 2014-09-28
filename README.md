@@ -220,7 +220,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * Test, Test and test again.
 * Finish Wiki
 * Create awesome examples
-* Finish killer logo
+* ~~Finish killer logo~~  created by the awesome designer Sol Witcher
 * Make sick as f@!% Landing Page
 * ~~Finish resolve mixin~~
 * ~~add reduce to kbody~~
