@@ -70,6 +70,12 @@ $outputrems: 		true !default
 		$r : $value + $x
 	@return $r
 
+// vertical rythm units for use in layouts and non-type elements, pass rem:true to return rem values
+@function kunit($baselines: 1, $rem: false)
+	@if $rem == true
+		@return	calculateRem(ceil($body-font-size * $body-line-height) * $baselines)
+	@return	ceil($body-font-size * $body-line-height) * $baselines	
+
 
 
 /* Mixins */
@@ -124,7 +130,7 @@ $outputrems: 		true !default
 	@include remType($px, $kb)
 
 // type mixin
-@mixin ktype($scale, $before: 0, $after: 0,$offset: 0, $pull: false, $push: false, $ie: $ie8compatability)
+@mixin ktype($scale, $before: 0, $after: 0, $lineheightmod: 0, $offset: 0, $pull: false, $push: false, $ie: $ie8compatability)
 	
 	// setup what we've got to work with
 	$kb : 		ceil($body-font-size * $body-line-height)
@@ -139,12 +145,20 @@ $outputrems: 		true !default
 		$new-font-size: 	ceil($body-font-size * exponent($scale-factor, $scale))
 		$new-line-height: 	ceil($new-font-size / $kb) * $kb
 
-		// push and pull 
+		// push and pull, to be deprecated, see below
 		@if $pull != false
 			$m: ($pull / 2)
 			$new-line-height: $new-line-height - ($new-line-height*$m)
 		@else if $push != false
 			$m: ($push / 2)
+			$new-line-height: $new-line-height + ($new-line-height*$m)
+
+		//lineheightmod to replace push and pull with a single value, easy declare eg. to bump up lineheight by one whole line (2 half lines) for an element ktype(0,1,1,2)
+		@if $lineheightmod < 0
+			$m: ($lineheightmod / 2)
+			$new-line-height: $new-line-height - ($new-line-height*$m)
+		@else if $lineheightmod > 0
+			$m: ($lineheightmod / 2)
 			$new-line-height: $new-line-height + ($new-line-height*$m)
 	
 	// offset
