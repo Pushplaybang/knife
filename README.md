@@ -236,3 +236,10 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 
 ## License
 [MIT Licensed](https://github.com/Pushplaybang/knife/blob/master/LICENSE) , Paul van Zyl 2014
+
+
+## Contributors
+
+Please Feel free to make pull requests or suggest features, this project is super new and still growing into itself, I generally create feat/something branches for specific features, but will create a seperate development branch for contributors to make pull requests against.
+
+
