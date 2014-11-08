@@ -52,10 +52,13 @@ $outputrems: 		true !default
 	// return the last value written
 	@return ($value)
 
+// strip units for rem calculations so that we don't run into errors in case people declare numerical values instead of ##px
+@function stripUnits($value)
+	@return $value / ($value * 0 + 1)
+
 // px to rem
 @function calculateRem($size) 
-	$remSize: $size / $body-font-size
-	@return #{$remSize}rem
+	@return stripUnits($size) / stripUnits($body-font-size) * 1rem
 
 // resolve values to a multiple of our base
 @function resolve($value: 0, $roundup: false)
@@ -100,12 +103,12 @@ $outputrems: 		true !default
 @mixin krem($attr: "",$px: 0, $ie: $ie8compatability, $resolve: false, $roundup: false)
 	@if $resolve == false
 		@if $ie == true
-			#{$attr} : $px
+			#{$attr} : stripUnits($px) * 1px
 		#{$attr} : calculateRem($px)
 	@else if $resolve == true
 		$newVal : resolve($px,$roundup)
 		@if $ie == true
-			#{$attr} : $newVal
+			#{$attr} : stripUnits($newVal) * 1px
 		#{$attr} : calculateRem($newVal)
 
 // html mixin
