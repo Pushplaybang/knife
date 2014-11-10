@@ -210,7 +210,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * [Modular Scale](http://modularscale.com/)
 
 ## TODO : 
-* Implement lists
+* Implement tests 
 * Start thinking about a much stronger API for v1.0
 * Consider SASS Maps for handling properties  better
 * Handle old global variable warning nonsense
