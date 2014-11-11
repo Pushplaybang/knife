@@ -189,9 +189,19 @@ small {
 
 # About
 
-Coming Soon.
+Typography is an essential art for web and application development, a lot of the internet is essentailly slightly interactive documents, and its there imperative that we achieve strong vertical layouts and a clear visual heirachy to our content.
+
+Knife is essentially a small collections of mixins leveraging good typographic principals to make setting up strong typographic layouts reasonably quick, easy and intuitive. Right now knife is not seeking to solve every problem or individual instance, but is there to help you get going quickly, and have a great typographic foundation in your SCSS.
+
+### Project Goals
+
+* Make vertical rhythm,  modular scale and rem units easy to implement and use.
+* Maintain and develop a small inuitive API for typography in scss
+* Switchable support for old browsers.
+* Stimulate the conversation about good web typography between developers and designers.
 
 ### Acknowledgements & Inspiration
+
 heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) and [sevenupcan's sass gridlover mixin](https://github.com/sevenupcan/gridlover-mixin). I've been further pushed to develop this little SASS tool to help "onboard" team members with typographic layout principals, using REM units, speeding up starting dev time on projects and make something without a steep learning curve.  **I hope you find it useful too**.
 
 
@@ -213,9 +223,12 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * add shift property to ktype
 * ~~Implement tests~~ 
 * Start thinking about a much stronger API for v1.0
-* Consider SASS Maps for handling properties  better
+* Consider SASS Maps for handling properties  better or changing propoerties for different sections.
 * ~~Handle old global variable warning nonsense~~
 * finish type template mixin
+	* a super quick single mixin for mocking up pages.
+	* Should have sensible defaults
+	* should accept a map of properties 
 * ~~handle unitless values~~
 * handle multiple values for padding / margin etc
 * Finish Wiki
