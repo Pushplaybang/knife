@@ -1,5 +1,9 @@
-/* Vars */
+/* - - - - - - - - - -  Vars - - - - - - - - - - */
 /* - - - - - - -  Utility Functions - - - - - - - - - */
+/* Awesome Function and Mixin from the gaurdian
+- https://github.com/guardian/guss-rem
+- licensed un Apache 2.0
+ */
 /* - - - - - - - - -  Utility Mixins  - - - - - - - - - -  */
 /* - - - - - - - - -  Public Mixins  - - - - - - - - - -  */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -406,15 +410,15 @@ th {
 
 /* Type Setup */
 html {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 23px;
 }
 
 body {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 23px;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.64286rem;
 }
 
 /* Typography */
@@ -423,89 +427,89 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 68px;
-  font-size: 4.25rem;
-  line-height: 72px;
-  line-height: 4.5rem;
-  margin-top: 48px;
-  margin-top: 3rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem;
+  font-size: 35px;
+  font-size: 2.5rem;
+  line-height: 46px;
+  line-height: 3.28571rem;
+  margin-top: 46px;
+  margin-top: 3.28571rem;
+  margin-bottom: 23px;
+  margin-bottom: 1.64286rem;
 }
 
 h2 {
-  font-size: 51px;
-  font-size: 3.1875rem;
-  line-height: 72px;
-  line-height: 4.5rem;
-  margin-top: 24px;
-  margin-top: 1.5rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem;
+  font-size: 30px;
+  font-size: 2.14286rem;
+  line-height: 46px;
+  line-height: 3.28571rem;
+  margin-top: 23px;
+  margin-top: 1.64286rem;
+  margin-bottom: 23px;
+  margin-bottom: 1.64286rem;
 }
 
 h3 {
-  font-size: 38px;
-  font-size: 2.375rem;
-  line-height: 48px;
-  line-height: 3rem;
-  margin-top: 24px;
-  margin-top: 1.5rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem;
+  font-size: 25px;
+  font-size: 1.78571rem;
+  line-height: 46px;
+  line-height: 3.28571rem;
+  margin-top: 23px;
+  margin-top: 1.64286rem;
+  margin-bottom: 23px;
+  margin-bottom: 1.64286rem;
 }
 
 h4 {
-  font-size: 29px;
-  font-size: 1.8125rem;
-  line-height: 48px;
-  line-height: 3rem;
-  margin-top: 24px;
-  margin-top: 1.5rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem;
+  font-size: 21px;
+  font-size: 1.5rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
+  margin-top: 23px;
+  margin-top: 1.64286rem;
+  margin-bottom: 23px;
+  margin-bottom: 1.64286rem;
 }
 
 h5 {
-  font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  margin-top: 24px;
-  margin-top: 1.5rem;
+  font-size: 17px;
+  font-size: 1.21429rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
+  margin-top: 23px;
+  margin-top: 1.64286rem;
   margin-bottom: 0px;
   margin-bottom: 0rem;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  margin-top: 24px;
-  margin-top: 1.5rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
+  margin-top: 23px;
+  margin-top: 1.64286rem;
   margin-bottom: 0px;
   margin-bottom: 0rem;
   text-transform: capitalize;
 }
 
 p, ul, ol, dl {
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
   margin-top: 0px;
   margin-top: 0rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 23px;
+  margin-bottom: 1.64286rem;
 }
 
 small {
   display: inline-block;
-  font-size: 13px;
-  font-size: 0.8125rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 12px;
+  font-size: 0.85714rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
   margin-top: 0px;
   margin-top: 0rem;
   margin-bottom: 0px;
@@ -531,29 +535,29 @@ small {
 
 .container {
   width: 1200px;
-  width: 75rem;
+  width: 85.71429rem;
   margin: 0 auto;
 }
 .container header {
   padding: 24px;
-  padding: 1.5rem;
+  padding: 1.71429rem;
 }
 .container .grid {
   float: left;
   padding-left: 12px;
-  padding-left: 0.75rem;
+  padding-left: 0.85714rem;
   padding-right: 12px;
-  padding-right: 0.75rem;
+  padding-right: 0.85714rem;
 }
 .container .grid1 {
   width: 800px;
-  width: 50rem;
+  width: 57.14286rem;
 }
 .container .grid2 {
   width: 400px;
-  width: 25rem;
+  width: 28.57143rem;
 }
 .container footer {
   padding-top: 48px;
-  padding-top: 3rem;
+  padding-top: 3.42857rem;
 }

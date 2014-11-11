@@ -1,7 +1,11 @@
 @charset "UTF-8";
 /*! sassyjson - v1.1.8 - 2014-06-01 */
-/* Vars */
+/* - - - - - - - - - -  Vars - - - - - - - - - - */
 /* - - - - - - -  Utility Functions - - - - - - - - - */
+/* Awesome Function and Mixin from the gaurdian
+- https://github.com/guardian/guss-rem
+- licensed un Apache 2.0
+ */
 /* - - - - - - - - -  Utility Mixins  - - - - - - - - - -  */
 /* - - - - - - - - -  Public Mixins  - - - - - - - - - -  */
 /* >> Bootcamp >> */
