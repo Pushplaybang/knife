@@ -210,14 +210,14 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * [Modular Scale](http://modularscale.com/)
 
 ## TODO : 
-* Implement tests 
+* add shift property to ktype
+* ~~Implement tests~~ 
 * Start thinking about a much stronger API for v1.0
 * Consider SASS Maps for handling properties  better
-* Handle old global variable warning nonsense
+* ~~Handle old global variable warning nonsense~~
 * finish type template mixin
-* handle unitless values
+* ~~handle unitless values~~
 * handle multiple values for padding / margin etc
-* Test, Test and test again.
 * Finish Wiki
 * Create awesome examples
 * ~~Finish killer logo~~  created by the awesome designer Sol Witcher
