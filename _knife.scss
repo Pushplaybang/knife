@@ -58,7 +58,7 @@ $outputrems: 		true !default;
 }
 // strip units for rem calculations so that we don't run into errors in case people declare numerical values instead of ##px
 @function stripUnits($value) {
-	@return $value / ($value * 0 + 1);
+	@return ($value) / ($value * 0 + 1);
 }
 
 // px to rem
@@ -90,6 +90,7 @@ $outputrems: 		true !default;
 
 	@return	ceil($body-font-size * $body-line-height) * $baselines;
 }
+
 
 
 /* - - - - - - - - -  Utility Mixins  - - - - - - - - - -  */
