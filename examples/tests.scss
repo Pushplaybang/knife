@@ -1,0 +1,47 @@
+// test script
+@import "bootcamp";
+@import "../knife.scss";
+
+// Kick everything off.
+@include runner-start;
+
+@include describe("Utility Functions and mixins Test Suite") {
+	@include it('tests the variable default values') {
+		$body : 	$body-font-size;
+		$line : 	$body-line-height;
+		$scale : 	$scale-factor;
+		$ie : 		$ie8compatability;
+		$rem : 		$outputrems;
+
+		@include should(expect($body), to( be(14px) ) );
+		@include should(expect($line), to( equal(1.618) ) );
+		@include should(expect($scale), to( equal(1.2) ) );
+		@include should(expect($ie), to( be(true) ) );
+		@include should(expect($rem), to( be(true) ) );
+	}
+
+	// exponent
+	@include it("test the exponent function") {
+		@include should(expect(exponent(10,3)), to( equal(1000) ) );
+		@include should(expect(exponent(2,-2)), to( equal(0.25) ) );
+
+	}
+
+	// Strip Units
+
+
+	// Calculate Rem
+
+
+	// Resolve
+
+
+	// K unit
+
+
+}
+
+
+
+// Finish Up
+@include runner-end;

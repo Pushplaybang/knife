@@ -1,6 +1,6 @@
 
 // Imports
-@import '../knife';
+@import '../knife.scss';
 @import 'normalize';
 
 * { 
@@ -36,7 +36,7 @@ small {
 }
 
 
-/// clearfix helper 
+// helpers
 %clearfix {
 	*zoom: 1;
 	&:before, &:after {
