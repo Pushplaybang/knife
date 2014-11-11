@@ -10,10 +10,10 @@
 }
 
 /* Type Setup */
-$body-font-size:    16px;
-$body-line-height:  1.5;
-$scale-factor:      1.333;
-$ie8compatability:  true;
+$knife-size:    16px;
+$knife-line-height:  1.5;
+$knife-scale:      1.333;
+$knife-ie:  true;
  
 html { @include khtml(); }
 body { @include kbody(); }
@@ -63,7 +63,8 @@ small {
 	
 	header {
 		@extend %fullblock;
-		@include krem("padding",24px);
+		// @include krem("padding",$knife-body);
+		padding: kunit(1);
 	}
 	.grid {
 		float: left;
@@ -77,7 +78,8 @@ small {
 	    @include krem("width",400px);
 	}
 	footer {
-		@include krem("padding-top", 48px);
+		padding-top: kunit(2);
+		// @include krem("padding-top", 48px);
 		@extend %fullblock;
 		@extend %clearfix;
 	}

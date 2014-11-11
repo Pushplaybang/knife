@@ -215,7 +215,7 @@ $knife-roundup: 	false !default;
 	$kb : 		(ceil($knife-body * $knife-line-height)) - $reduce;
 	$px : 			$knife-body - $reduce;
 
-	@if ($ie8compatability == true) {
+	@if ($knife-ie == true) {
 		@include pxType($px, $kb);
 	}
 	@include remType($px, $kb);
