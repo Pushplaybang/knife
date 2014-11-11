@@ -223,6 +223,8 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * add shift property to ktype
 * ~~Implement tests~~ 
 * Start thinking about a much stronger API for v1.0
+	* better naming convention for variables
+	* More Flexibility
 * Consider SASS Maps for handling properties  better or changing propoerties for different sections.
 * ~~Handle old global variable warning nonsense~~
 * finish type template mixin
