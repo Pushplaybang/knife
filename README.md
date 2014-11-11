@@ -12,12 +12,6 @@ Nail vertical rhythm, modular scale, and REMs like a boss with this simple set o
 * Designed to be compatible with [Grid Lover](http://www.gridlover.net/)
 * Solves sub pixel rounding errors in different browsers by rounding out your base numbers.
 
-### Project Goals
-* Make good typography EASY(er) to achieve
-* Keep 'Knife' simple to use and understand
-* Create a typographic equivelant to the awesome Susy
-
-
 ## Install
 
 Of course, first make sure you have [SASS](http://sass-lang.com/) installed.
