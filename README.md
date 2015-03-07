@@ -246,7 +246,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * ~~add basic github page~~
 
 ## License
-[MIT Licensed](https://github.com/Pushplaybang/knife/blob/master/LICENSE) , Paul van Zyl 2014
+[MIT Licensed](https://github.com/Pushplaybang/knife/blob/master/LICENSE) , Paul van Zyl 2015
 
 
 ## Contributors
