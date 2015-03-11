@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*! sassyjson - v1.1.8 - 2014-06-01 */
+/* Vars */
+/* - - - - - - -  Utility Functions - - - - - - - - - */
+/* - - - - - - - - -  Utility Mixins  - - - - - - - - - -  */
+/* - - - - - - - - -  Public Mixins  - - - - - - - - - -  */
+/* >> Bootcamp >> */
+Test Results {
+  Success: true;
+  Stats:  ✔ ✔ ✔ ✔ ✔ ✔;
+  Tests: 6;
+  Asserts: 19;
+  Passed: 6;
+  Failed: 0;
+  Skipped: 0;
+}
+
+/* << Bootcamp << */

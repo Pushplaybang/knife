@@ -1,0 +1,69 @@
+// test script
+@import "bootcamp";
+@import "../knife.scss";
+
+// Kick everything off.
+@include runner-start;
+
+@include describe("Knife Utility Functions Test Suite") {
+	@include it('tests the variable default values') {
+		$body : 	$body-font-size;
+		$line : 	$body-line-height;
+		$scale : 	$scale-factor;
+		$ie : 		$ie8compatability;
+		$rem : 		$outputrems;
+
+		@include should( expect($body), to( be(14px) ) );
+		@include should( expect($line), to( equal(1.618) ) );
+		@include should( expect($scale), to( equal(1.2) ) );
+		@include should( expect($ie), to( be(true) ) );
+		@include should( expect($rem), to( be(true) ) );
+	}
+
+	// exponent
+	@include it("tests the exponent function") {
+		@include should( expect( exponent(10,3) ), to( equal(1000) ) );
+		@include should( expect( exponent(2,-2) ), to( equal(0.25) ) );
+
+	}
+
+	// Strip Units
+	@include it('will return unitless values') {
+		$a : 16px;
+		$b : 16;
+
+		@include should( expect( stripUnits($a) ), to(be(16) ) );
+		@include should( expect( stripUnits($b) ), to(be(16) ) );
+
+		// NB : this function will not handle numbers passed as strings (eg: "16px")
+
+	}
+
+	// Calculate Rem
+	@include it('converts pixel values to rem values') {
+		@include should( expect( calculateRem(14px) ), to( be(1rem) ) );
+		@include should( expect( calculateRem(14) ), to( be(1rem) ) );
+	}
+
+	// Resolve
+	@include it('resolves the value passed to a multiple of the bassline') {
+		@include should( expect( resolve(50) ), to( be(46) ) );
+		@include should( expect( resolve(50,true) ), to( be(69) ) );
+		@include should( expect( resolve(50px) ), to( be(46px) ) );
+		@include should( expect( resolve(50px,true) ), to( be(69px) ) );
+	}
+
+	// K unit
+	@include it('returns a multiple of the baseline') {
+		@include should( expect( kunit(1) ), to( be(23px) ) );
+		@include should( expect( kunit(5) ), to( be(115px) ) );
+		@include should( expect( kunit(1,true) ), to( be-close-to(1.64286rem,5) ) ); // precise to 5 decimal places
+		@include should( expect( kunit(5,true) ), to( be-close-to(8.21429rem,5) ) ); // precise to 5 decimal places
+	}
+
+}
+
+
+
+// Finish Up
+@include runner-end;

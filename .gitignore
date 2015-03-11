@@ -1,6 +1,7 @@
 /config.codekit
 .sass-cache
 /examples/.sass-cache
+/examples/node_modules
 
 ### OSX ###
 .DS_Store
