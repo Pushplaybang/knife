@@ -213,7 +213,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * Implement tests 
 * Start thinking about a much stronger API for v1.0
 * Consider SASS Maps for handling properties  better
-* Handle old global variable warning nonsense
+* ~~Handle old global variable warning nonsense~~
 * finish type template mixin
 * handle unitless values
 * handle multiple values for padding / margin etc
