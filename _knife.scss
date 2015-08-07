@@ -156,13 +156,15 @@ $outputrems: 		true !default;
 
 // body mixin
 @mixin kbody($reduce:0px) {
-	$kb : 		(ceil($body-font-size * $body-line-height)) - $reduce;
-	$px : 			$body-font-size - $reduce;
+  $kb :  (ceil($body-font-size * $body-line-height)) - $reduce;
+  $px :  $body-font-size - $reduce;
+  $rkb : $kb+$reduce;
+  $rpx : $px+$reduce;
 
-	@if ($ie8compatability == true) {
-		@include pxType($px, $kb);
-	}
-	@include remType($px, $kb);
+  @if ($ie8compatability == true) {
+    @include pxType($px, $kb);
+  }
+  @include remType($rpx, $rkb);
 }
 
 // type mixin
