@@ -185,7 +185,7 @@ small {
 
 # About
 
-Typography is an essential art for web and application development, a lot of the internet is essentailly slightly interactive documents, and its there imperative that we achieve strong vertical layouts and a clear visual heirachy to our content.
+Typography is an essential art for web and application development, a lot of the internet is essentailly slightly interactive documents, and its therefore imperative that we achieve strong vertical layouts and create a clear visual heirachy to our content.
 
 Knife is essentially a small collections of mixins leveraging good typographic principals to make setting up strong typographic layouts reasonably quick, easy and intuitive. Right now knife is not seeking to solve every problem or individual instance, but is there to help you get going quickly, and have a great typographic foundation in your SCSS.
 
@@ -208,6 +208,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * [Composing the New Canon: Music, Harmony, Proportion](http://24ways.org/2011/composing-the-new-canon/)
 * [Relational Design](http://blog.8thlight.com/billy-whited/2011/10/28/r-a-ela-tional-design.html#tips)
 * [Aligning type to baseline the right way using SASS](https://medium.com/@razvanonofrei/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b)
+* [Scotch.io : Typography and vertical rhythm ](https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm)
 
 
 #### Tools for Better Type
