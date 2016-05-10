@@ -168,10 +168,10 @@ $outputrems: 		true !default
 	//lineheightmod to replace push and pull with a single value, easy declare eg. to bump up lineheight by one whole line (2 half lines) for an element ktype(0,1,1,2)
 	@if $lineheightmod < 0
 		$m: ($lineheightmod / 2)
-		$new-line-height: $new-line-height - ($new-line-height*$m)
+		$new-line-height: $new-line-height + ($kb*$m)
 	@else if $lineheightmod > 0
 		$m: ($lineheightmod / 2)
-		$new-line-height: $new-line-height + ($new-line-height*$m)
+		$new-line-height: $new-line-height + ($kb*$m)
 	
 	// offset
 	@if $offset != 0
