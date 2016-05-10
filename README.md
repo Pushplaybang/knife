@@ -242,7 +242,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * ~~finish push, pull~~ 
 * ~~suffix and prefix~~
 * ~~start type template mixin~~
-* ~~add 'offset' to accomodate border etc.~~
+* ~~add 'offset' to accommodate border etc.~~
 * ~~Add basic Example~~
 * ~~add basic github page~~
 
