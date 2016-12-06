@@ -1,14 +1,14 @@
 knife
 =====
-Nail vertical rhythm, modular scale, and REMs like a boss with this simple set of SASS/SCSS variables, functions and mixins.  
+Nail vertical rhythm, modular scale, and REMs like a boss with this simple set of Sass/SCSS variables, functions and mixins.
 
-[![endorse](https://api.coderwall.com/pushplaybang/endorsecount.png)](https://coderwall.com/pushplaybang)
+[Endorse on CoderWall](https://coderwall.com/pushplaybang)
 
-**NB: early release, expect this to change, I'll do my best not to break stuff, and let you know if something will break in the future..**
+**Note: This is an early release so expect things to change. I will do my best not to break stuff, and will let you know if something will break in the future..**
 
 ## Features
-* Simple to master and Use
-* Responsive friendly 
+* Simple to master and use.
+* Responsive friendly.
 * Work / think in px - **win in REMs**
 * Optional **IE Support**
 * Designed to be compatible with [Grid Lover](http://www.gridlover.net/)
@@ -16,24 +16,41 @@ Nail vertical rhythm, modular scale, and REMs like a boss with this simple set o
 
 ## Install
 
-Of course, first make sure you have [SASS](http://sass-lang.com/) installed.
-
-then install with bower : 
+Install [Sass](http://sass-lang.com/):
 
 ```bash
-$ bower install knife
+gem install sass
 ```
 
-or : Download and simply include the knife.sass file in your sass directory and place the following at the top of your main sass / scss stylesheet to import it.
+Install [Knife](http://pushplaybang.github.io/knife/) with [Yarn](https://yarnpkg.com/):
+
+```bash
+yarn add knife
+```
+
+... or with [NPM](https://www.npmjs.com/):
+
+```bash
+npm install knife
+```
+
+... or with [Bower](https://bower.io/):
+
+```bash
+bower install knife
+```
+
+Alternatively, you can simply import the `knife.sass` file into you primary Sass/SCSS stylesheet after downloading and and including it in your project.
+
+
 ```scss
 @import 'knife';
 ```
 
 
 
-
 ## Usage
-Note that this tool is heavily inspired by the fantatstic web app [Grid Lover](http://www.gridlover.net/) and its absolutely one of the eaiest ways to sort out these initial variables.  
+Note that this tool is heavily inspired by the fantatstic web app [Grid Lover](http://www.gridlover.net/) and its absolutely one of the eaiest ways to sort out these initial variables.
 
 Set your **basic variables**
 
@@ -64,7 +81,7 @@ h2 { @include ktype(4, 1, 1); }
 h3 { @include ktype(3, 1, 1); }
 h4 { @include ktype(2, 1, 1); }
 h5 { @include ktype(1, 1, 0); }
-h6 { 
+h6 {
 @include ktype(0, 1, 0);
 	font-weight: normal;
 	text-transform: capitalize;
@@ -83,7 +100,7 @@ Use the `krem()` mixin to set **any** other value in rems, because no one really
 note the bloat added by the IE compatability, obviously setting that to false will result in halving the output.  Have a look at the basic demo in the example folder for more information.
 
 ```css
-/* Type Setup */
+// Type Setup
 html {
   font-size: 16px;
   line-height: 24px; }
@@ -94,7 +111,7 @@ body {
   font-size: 1rem;
   line-height: 1.5rem; }
 
-/* Typography */
+// Typography
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase; }
 
@@ -216,9 +233,9 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * [Grid Lover](http://www.gridlover.net/)
 * [Modular Scale](http://modularscale.com/)
 
-## TODO : 
+## TODO :
 * add shift property to ktype
-* ~~Implement tests~~ 
+* ~~Implement tests~~
 * Start thinking about a much stronger API for v1.0
 	* better naming convention for variables
 	* More Flexibility
@@ -227,7 +244,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * finish type template mixin
 	* a super quick single mixin for mocking up pages.
 	* Should have sensible defaults
-	* should accept a map of properties 
+	* should accept a map of properties
 * ~~handle unitless values~~
 * handle multiple values for padding / margin etc
 * Finish Wiki
@@ -239,7 +256,7 @@ heavily inspired by the awesome web app [Grid Lover](http://www.gridlover.net/) 
 * ~~add reduce to khtnl~~
 * ~~Add sache~~
 * ~~Add bower support~~
-* ~~finish push, pull~~ 
+* ~~finish push, pull~~
 * ~~suffix and prefix~~
 * ~~start type template mixin~~
 * ~~add 'offset' to accommodate border etc.~~
