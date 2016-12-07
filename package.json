@@ -1,0 +1,32 @@
+{
+  "name": "knife-sass",
+  "version": "0.3.5",
+  "description": "Nail vertical rhythm, modular scale, and REMs like a boss with this simple set of SASS/SCSS variables, functions and mixins.",
+  "main": "package.json",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pushplaybang/knife.git"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "typography",
+    "vertical-rhythm",
+    "design",
+    "ui",
+    "responsive",
+    "responsive-web-design"
+  ],
+  "author": "Paul van Zyl <paul@nonacreative.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pushplaybang/knife/issues"
+  },
+  "homepage": "https://github.com/Pushplaybang/knife#readme"
+}
