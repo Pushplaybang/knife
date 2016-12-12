@@ -2,6 +2,7 @@
 .sass-cache
 /examples/.sass-cache
 /examples/node_modules
+npm-debug.log
 
 ### OSX ###
 .DS_Store
