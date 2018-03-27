@@ -25,27 +25,22 @@ gem install sass
 Install [Knife](http://pushplaybang.github.io/knife/) with [Yarn](https://yarnpkg.com/):
 
 ```bash
-yarn add knife
+yarn add knife-sass
 ```
 
 ... or with [NPM](https://www.npmjs.com/):
 
 ```bash
-npm install knife
+npm install knife-sass
 ```
 
-... or with [Bower](https://bower.io/):
-
-```bash
-bower install knife
-```
-
-Alternatively, you can simply import the `knife.sass` file into you primary Sass/SCSS stylesheet after downloading and and including it in your project.
+Alternatively, you can simply import the `knife.scss` file into you primary Sass/SCSS stylesheet after downloading and and including it in your project.
 
 
 ```scss
-@import 'knife';
+@import "./../../node_modules/knife-sass/_knife.scss";
 ```
+**NB: obviously the path will be specific to your project structure**
 
 
 
